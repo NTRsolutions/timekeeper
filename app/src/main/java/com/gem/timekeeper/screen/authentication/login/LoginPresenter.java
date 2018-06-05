@@ -3,13 +3,13 @@ package com.gem.timekeeper.screen.authentication.login;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.gem.timekeeper.data.dto.UserDTO;
 import com.gem.timekeeper.data.remote.callback.LoginCallback;
+import com.gem.timekeeper.pref.PrefWrapper;
 import com.gem.timekeeper.realm.RealmController;
 import com.gem.timekeeper.screen.main.MainActivity;
 import com.gemvietnam.base.viper.Presenter;
 import com.gemvietnam.base.viper.interfaces.ContainerView;
-import com.gem.timekeeper.data.dto.UserDTO;
-import com.gem.timekeeper.pref.PrefWrapper;
 import com.gemvietnam.utils.StringUtils;
 
 /**

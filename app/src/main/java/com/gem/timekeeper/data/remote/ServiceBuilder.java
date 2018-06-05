@@ -1,7 +1,12 @@
 package com.gem.timekeeper.data.remote;
 
 import com.gem.timekeeper.App;
+import com.gem.timekeeper.BuildConfig;
 import com.gem.timekeeper.data.dto.UserDTO;
+import com.gem.timekeeper.data.remote.services.ApiConfig;
+import com.gem.timekeeper.data.remote.services.CommonService;
+import com.gem.timekeeper.data.remote.services.ListTimeTrackService;
+import com.gem.timekeeper.data.remote.services.LocationService;
 import com.gem.timekeeper.data.remote.services.SurveyService;
 import com.gem.timekeeper.pref.PrefWrapper;
 import com.gemvietnam.utils.StringUtils;
@@ -11,9 +16,6 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
-import com.gem.timekeeper.BuildConfig;
-import com.gem.timekeeper.data.remote.services.LocationService;
-import com.gem.timekeeper.data.remote.services.CommonService;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -34,7 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ServiceBuilder {
 
-  private static Retrofit getRetrofit(String endPoint) {
+  private static Retrofit getRetrofit(String baseUrl) {
     HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
     if (BuildConfig.DEBUG) {
       interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -77,7 +79,7 @@ public class ServiceBuilder {
     Gson gSon = builder.setLenient().create();
 
     return new Retrofit.Builder()
-        .baseUrl(endPoint)
+        .baseUrl(baseUrl)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create(gSon))
         .build();
@@ -89,7 +91,7 @@ public class ServiceBuilder {
   }
 
   private static String buildUrl(String serviceName) {
-    return getBaseUrl() + BuildConfig.API_VERSION  + "/" + (StringUtils.isEmpty(serviceName) ? "" : serviceName + "/");
+    return getBaseUrl() + BuildConfig.API_VERSION + "/" + (StringUtils.isEmpty(serviceName) ? "" : serviceName + "/");
   }
 
   /**
@@ -135,5 +137,9 @@ public class ServiceBuilder {
 
   public static CommonService getCommonService() {
     return getRetrofit(buildUrl("")).create(CommonService.class);
+  }
+
+  public static ListTimeTrackService getListTimeTrackService() {
+    return getRetrofit(ApiConfig.BASE_URL).create(ListTimeTrackService.class);
   }
 }

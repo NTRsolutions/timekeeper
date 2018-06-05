@@ -20,12 +20,12 @@
             android:name="com.gem.timekeeper.screen.authentication.AuthenticationActivity"
             android:windowSoftInputMode="adjustPan">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity
@@ -35,6 +35,18 @@
         <activity
             android:name="com.gem.timekeeper.screen.SubActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="com.gem.timekeeper.screen.test.TestActivity"
+            android:windowSoftInputMode="adjustPan">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

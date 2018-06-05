@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <declare-styleable name="HomeItemView">
-    <attr name="iconSrc" format="reference" />
-    <attr name="contentBackground" format="reference" />
-    <attr name="contentText" format="string" />
-  </declare-styleable>
+    <declare-styleable name="HomeItemView">
+        <attr name="iconSrc" format="reference" />
+        <attr name="contentBackground" format="reference" />
+        <attr name="contentText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="DateDay">
+        <attr name="contentDay" format="reference|string" />
+        <attr name="contentDate" format="reference|string" />
+        <attr name="isWorking" format="boolean"/>
+    </declare-styleable>
 </resources>

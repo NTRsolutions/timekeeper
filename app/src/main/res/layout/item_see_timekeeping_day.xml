@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeff2"
+    android:paddingBottom="@dimen/medium_padding"
+    android:paddingLeft="@dimen/large_padding"
+    android:paddingRight="@dimen/large_padding"
+    android:paddingTop="@dimen/medium_padding">
+
+    <com.gem.timekeeper.widget.DateDay
+        app:contentDate="24"
+        app:contentDay="T2"
+        app:isWorking="true"
+        android:id="@+id/ddTime"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/tvTimeCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.03"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toRightOf="@id/ddTime"
+        app:layout_constraintTop_toTopOf="@id/ddTime"
+        tools:text="08:00 SA" />
+
+    <TextView
+        android:id="@+id/tvTimeCheckOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.03"
+        android:text="05:30 CH"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/ddTime"
+        app:layout_constraintLeft_toRightOf="@id/ddTime" />
+
+    <TextView
+        android:id="@+id/tvWaitConfirmCheckOut"
+        android:layout_width="69dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/bg_wait_confirm"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:text="@string/wait_confirm"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toRightOf="@id/tvTimeCheckOut"
+        app:layout_constraintTop_toTopOf="@id/tvTimeCheckOut" />
+
+    <TextView
+        android:id="@+id/tvWaitConfirmCheckIn"
+        android:layout_width="69dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/bg_wait_confirm"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:text="@string/wait_confirm"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintLeft_toRightOf="@id/tvTimeCheckIn"
+        app:layout_constraintTop_toTopOf="@id/tvTimeCheckIn" />
+
+    <TextView
+        android:id="@+id/tvlbDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.03"
+        android:text="@string/day"
+        android:textColor="#78838c"
+        android:textSize="11sp"
+        android:textStyle="normal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTimeCheckIn" />
+
+    <TextView
+        android:id="@+id/tvCheckInCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="1dp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.03"
+        android:textColor="#000000"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/tvlbDay"
+        app:layout_constraintRight_toLeftOf="@id/tvlbDay"
+        tools:text="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.03"
+        android:text="@string/onSiteCompany"
+        android:textColor="@color/colorGreen"
+        android:textSize="11sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimeCheckOut"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTimeCheckOut" />
+
+    <TextView
+        android:id="@+id/tvForgerCheckIn"
+        android:layout_width="113dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_forger_timekeeping"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:text="@string/forger_timekeeping"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/ddTime"
+        app:layout_constraintTop_toTopOf="@id/ddTime" />
+
+    <TextView
+        android:id="@+id/tvForgerCheckOut"
+        android:layout_width="113dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_forger_timekeeping"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:text="Quên chấm công?"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ddTime"
+        app:layout_constraintLeft_toRightOf="@id/ddTime" />
+</android.support.constraint.ConstraintLayout>

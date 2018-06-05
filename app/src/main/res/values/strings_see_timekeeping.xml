@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="forger_timekeeping">Quên chấm công?</string>
+    <string name="wait_confirm">Chờ duyệt</string>
+    <string name="day">ngày</string>
+    <string name="week"></string>
+    <string name="onSiteCompany">Ngoài công ty</string>
+    <string name="work_compensated">Làm bù</string>
+</resources>

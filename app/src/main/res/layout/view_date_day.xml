@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ddTime"
+    android:layout_width="@dimen/size_week_day"
+    android:layout_height="@dimen/size_week_day"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_day_of_week_normal"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:textColor="#3866c9"
+        android:textSize="@dimen/day_of_week_text_size"
+        android:textStyle="normal"
+        tools:targetApi="lollipop"
+        tools:text="T2" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/date_height"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:letterSpacing="0.03"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/day_text_size"
+        android:textStyle="normal"
+        tools:targetApi="lollipop"
+        tools:text="15" />
+</LinearLayout>
